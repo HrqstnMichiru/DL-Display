@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>语音合成效果展示</title>
+        <link rel="stylesheet" href="../static/css/index.css">
+    </head>
+    <body>
+        <form action="{{ url_for('synthesis') }}" method="POST">
+            <div class="parameter">
+                <div class="model">
+                    <span class="universal">Model<br></span>
+                    <div class="all">
+                         {% if models %}
+                            <select id="model" name="model" value="{{ model }}">
+                                {% for i,j in models.items() %}
+                                    <option value="{{ i }}">{{ i }}</option>
+                                {% endfor %}
+                            </select><br />
+                        {% else %}
+                            <select id="model" name="model">
+                                <option value="taco-wave">Tacotron2+Waveglow</option>
+                                <option value="taco-hifi">Tacotron2+HiFi-GAN</option>
+                                <option value="vits">Vits</option>
+                            </select><br />
+                        {% endif %}
+                    </div>   
+                </div>
+                <hr>
+                <div class="text">
+                    <span class="universal">Text<br></span>
+                    <div class="all">
+                        {% if text %}
+                            <input type="text" name="text" value="{{ text }}">
+                        {% else %}
+                            <input type="text" name="text" placeholder="请输入你想要合成的文字(仅限日文)">
+                        {% endif %}
+                    </div>
+                </div>
+                <hr>
+                <div class="voice">
+                    <span class="universal">Voice<br></span>
+                    <div class="all">
+                        <select id="voice" name="voice">
+                            <option value="atri">亚托莉</option>
+                            <option value="yoshino">朝武芳乃</option>
+                            <option value="murasame">丛雨</option>
+                            <option value="mako">常陆茉子</option>
+                        </select><br />
+                    </div>
+                </div>
+            </div>
+            <input type="submit" class="synthesis" name="submit" value="点击合成喵!">
+        </form>  
+        <div class="message">
+            <span class="universal">Message<br></span>
+            <div class="all">{{ message }}</div>
+        </div>
+        <div class="output">
+            <span>Output Audio<br></span>
+            <div class="all">
+                <audio controls>
+                    <source src="{{ url_for('static',filename='audios/sukisuki.wav') }}" type="audio/wav">
+                </audio>
+            </div>
+        </div>
+        <div class="image-show">
+            <img src="{{ url_for('static',filename='images/spec.jpg') }}" alt="">
+            <img src="{{ url_for('static',filename='images/audio.jpg') }}" alt="">
+        </div>
+    </body>
+</html>

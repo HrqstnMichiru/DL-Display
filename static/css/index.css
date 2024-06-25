@@ -1,0 +1,120 @@
+* {
+margin:0 auto;
+padding:0;
+box-sizing:border-box;
+}
+
+li {
+list-style:none;
+}
+
+body {
+    font: 15px "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+    color: #808080;;
+}
+
+hr {
+    border:1px,solid,rgba(0,0,0,0.2)
+}
+
+.parameter,.synthesis,.message,.output,.image-show {
+    border:1px,solid,rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+.parameter {
+    margin-top: 20px;
+    width: 500px;
+    height:300px;
+    box-shadow:1px 1px 1px 1px rgba(0,0,0,0.2) ;
+}
+
+.universal {
+    display: block;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.all {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 460px;
+    border: 1px,solid,rgba(0,0,0,0.2);
+}
+
+.model select ,.text input ,#voice {
+    font: 15px "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+    color:skyblue;
+    border: none;
+    width: 440px;
+    outline: none;
+}
+
+.synthesis {
+    display: block;
+    margin-top: 20px;
+    width: 500px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: rgb(228,204,252);
+    font-size: 20px ;
+    font-weight: 700;
+    color: rgb(146,52,230);
+    border: none;
+}
+
+.synthesis:hover {
+    background-color: rgb(237,223,253);
+}
+
+.message {
+    margin-top: 20px;
+    width: 500px;
+    height: 100px;
+}
+
+.message div {
+    height: 40px ;
+}
+
+
+.output {
+    margin-top: 20px;
+    width: 500px;
+    height: 140px;
+}
+
+.output span {
+    display: inline-block;
+    border: 1px,solid,rgba(0,0,0,0.2);
+    border-radius: 5px 0 5px 0;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.output audio {
+    width: 435px;
+    margin-top: 5px;
+}
+
+.image-show {
+    border: none;
+    display: flex;
+    margin-top: 20px;
+    width: 1400px;
+    height: 400px;
+}
+
+.image-show img {
+    width: 700px;
+    height: 400px;
+}
+
+
+
